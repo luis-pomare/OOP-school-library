@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+
+require_relative './person'
+
+# Inherits from Person main class
+class Teacher < Person
+  def initialize(age, specialization, name = 'Unknown')
+    super(age, name)
+    @specialization = specialization
+  end
+
+  def can_use_services?
+    true
+  end
+end
