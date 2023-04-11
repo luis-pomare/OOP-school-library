@@ -4,8 +4,8 @@ require_relative './person'
 
 # Inherits from Person main class
 class Teacher < Person
-  def initialize(age, specialization, name = 'Unknown')
-    super(age, name)
+  def initialize(age, specialization, name = 'Unknown', partent_permission: true)
+    super(age, name, partent_permission)
     @specialization = specialization
   end
 
