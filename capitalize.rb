@@ -1,8 +1,10 @@
 # frozen_string_literal: true
-require_relative "./base"
 
-class Capitalize < Base
+require_relative './base'
+
+# Class to create capitalized strings
+class CapitalizeDecorator < Base
   def correct_name
-    @nameable_object.correct_name.capitalize()
+    @nameable.correct_name.capitalize
   end
 end

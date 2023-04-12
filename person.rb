@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require_relative "./nameable"
+
+require_relative './nameable'
 
 # Main class
 class Person < Nameable
@@ -7,6 +8,7 @@ class Person < Nameable
   attr_accessor :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -17,13 +19,13 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 
+  def correct_name
+    @name
+  end
+
   private
 
   def of_age?
     @age >= 18
-  end
-
-  def correct_name
-    @name
   end
 end
