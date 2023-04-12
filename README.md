@@ -19,10 +19,45 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
+To get a local copy up and running follow these simple example steps.
 
-The user needs to run the commands inside one of the classes (teacher.rb, student.rb, person.rb) on irb environment.
+### Prerequisites
 
-- You can create instances of each class try out it's methods
+> You need the following tools be installed in your computer:
+
+> - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+> - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
+> - IDE
+> - command line (irb)
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  cd my-prefered-folder
+  
+  git clone https://github.com/luis-pomare/OOP-school-library.git
+
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  cd OOP-school-library
+  
+  bundle install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  ruby main.rb
+```
 
 ### Prerequisites
 
@@ -43,6 +78,12 @@ In order to run this project you need to install Ruby.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Add books**
+- [ ] **Create diagrams**
+
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
@@ -52,6 +93,11 @@ Feel free to check the [issues page](https://github.com/luis-pomare/enumerable/i
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project give it one star
+
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank my coding partners [Kender Romain](https://github.com/kensteph) and [@Ansderly Rameau](https://github.com/hansderly) who help me a lot on building and understanding the solutions for this project.
 
 ## 📝 License <a name="license"></a>
 
