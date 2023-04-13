@@ -7,5 +7,12 @@ class Book
   def inicialize(title, author)
     @title = title
     @author = author
+    @rentals = []
+  end
+
+  def add_rental(rental)
+    if @rentals.include(rental) == false
+      @rentals.push(rental)
+    end
   end
 end
