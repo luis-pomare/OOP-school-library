@@ -28,6 +28,8 @@ class Person < Nameable
     if @rentals.include?(rental) == false
       @rentals.push(rental)
     end
+    
+    rental.person=(self)
   end
 
   private
