@@ -12,10 +12,8 @@ class Book
   end
 
   def add_rental(rental)
-    if @rentals.include?(rental) == false
-      @rentals.push(rental)
-    end
-    
-    rental.book=(self)
+    @rentals.push(rental) if @rentals.include?(rental) == false
+
+    rental.book = (self)
   end
 end

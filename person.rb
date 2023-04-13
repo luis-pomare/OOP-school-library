@@ -25,11 +25,9 @@ class Person < Nameable
   end
 
   def add_rental(rental)
-    if @rentals.include?(rental) == false
-      @rentals.push(rental)
-    end
-    
-    rental.person=(self)
+    @rentals.push(rental) if @rentals.include?(rental) == false
+
+    rental.person = (self)
   end
 
   private
