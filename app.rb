@@ -18,7 +18,7 @@ class App
     @teachers = []
   end
 
-  def exit
+  def exit_app
     puts "\nAll the objects you created will be deleted:"
     puts 'Are you sure you want to close the app? Y/N'
     @input = gets.chop
@@ -41,7 +41,7 @@ class App
   def select
     case @input
     when '4' then insert_book
-    when '7' then exit
+    when '7' then exit_app
     else default
     end
   end
