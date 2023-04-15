@@ -5,6 +5,7 @@ require_relative './student'
 require_relative './teacher'
 require_relative './rental'
 require_relative './book'
+require 'pry'
 
 # APP method to manage the entire codebase
 class App
@@ -49,11 +50,18 @@ class App
     age = gets.chop
     puts "\nDoes the student have parent permission?\n\n    1. For \"Yes\"
     2. For \"No\""
-    if gets.chop == '1'
-      permission = true 
-    else permission = false 
-    end
+    permission = gets.chop == '1'
     @students.push(Student.new(age, permission, name))
+  end
+
+  def create_teacher
+    puts "\nPlease enter the teacher's name:"
+    name = gets.chop
+    puts "\nPlease enter the teacher's age:"
+    age = gets.chop
+    puts "\nPlease enter the teacher's specialization:"
+    specialization = gets.chop
+    @teachers.push(Teacher.new(specialization, age, name))
   end
 
   def create_person
@@ -94,5 +102,6 @@ class App
       read_input
       select
     end
+    binding.pry
   end
 end
