@@ -5,7 +5,6 @@ require_relative './student'
 require_relative './teacher'
 require_relative './rental'
 require_relative './book'
-require 'pry'
 
 # APP method to manage the entire codebase
 class App
@@ -86,31 +85,31 @@ class App
       puts "\nYou can't add rentals without any book in your library"
       return 2
     end
-    return 3
+    3
   end
 
   def read_rental_date
-    puts "Please insert the date of the rental:"
-    return gets.chop
+    puts 'Please insert the date of the rental:'
+    gets.chop
   end
 
   def read_rental_book
     puts "Please select one of the following books:\n"
-    @books.each_with_index do |entry, index| 
-      puts "#{index+1}. For #{entry.title} by #{entry.author}"
+    @books.each_with_index do |entry, index|
+      puts "#{index + 1}. For #{entry.title} by #{entry.author}"
     end
-    return gets.chop
+    gets.chop
   end
-  
+
   def show_rental_people
     puts "Please select one of the following users:\n"
     counter = 1
     @students.each_with_index do |entry, index|
-      counter += 1 
-      puts "#{index+1}. For #{entry.name} type: Student ID: #{entry.id}"
+      counter += 1
+      puts "#{index + 1}. For #{entry.name} type: Student ID: #{entry.id}"
     end
     @teachers.each_with_index do |entry, index|
-      puts "#{index+counter}. For #{entry.name} type: Teacher ID: #{entry.id}"
+      puts "#{index + counter}. For #{entry.name} type: Teacher ID: #{entry.id}"
     end
   end
 
@@ -118,17 +117,16 @@ class App
     show_rental_people
     people = [*@students, *@teachers]
     position = gets.chop
-    return people[position.to_i - 1] 
+    people[position.to_i - 1]
   end
-  
+
   def insert_rental
-    if verify_rental == 3
-      date = read_rental_date
-      book = @books[read_rental_book.to_i-1]
-      person = read_rental_person
-      binding.pry
-      @rentals.push(Rental.new(date, book, person))
-    end
+    return unless verify_rental == 3
+
+    date = read_rental_date
+    book = @books[read_rental_book.to_i - 1]
+    person = read_rental_person
+    @rentals.push(Rental.new(date, book, person))
   end
 
   def select
