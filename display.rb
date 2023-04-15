@@ -66,9 +66,10 @@ class Display
     puts "\n"
     if @books.empty? == false
       @books.each_with_index do |book, index|
-        puts "#{index+1}. #{book.title} by #{book.author}"
+        puts "#{index + 1}. #{book.title} by #{book.author}"
       end
-    else puts "Empty library"
+    else
+      puts 'Empty library'
     end
     puts "\n"
   end
