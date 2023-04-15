@@ -13,7 +13,7 @@ class App
     @input = 0
   end
 
-  def case1
+  def case7
     puts "\nAll the objects you created will be deleted:"
     puts 'Are you sure you want to close the app? Y/N'
     @input = gets.chop
@@ -23,6 +23,17 @@ class App
     puts "\n"
   end
 
+  def default
+    puts "\nYou selected an invalid option\n"
+  end
+  
+  def select
+    case @input
+    when '7' then case7
+    else default
+    end
+  end
+  
   def show_options
     puts "Please select one of the following options:\n
     1. For \"list all books\"\n
@@ -34,18 +45,7 @@ class App
     7. For \"exit'\n
     "
   end
-
-  def default
-    puts "\nYou selected an invalid option\n"
-  end
-
-  def select
-    case @input
-    when '1' then case1
-    else default
-    end
-  end
-
+  
   def run
     while @running == 1
       show_options
