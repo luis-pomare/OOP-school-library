@@ -96,16 +96,4 @@ class Display
       puts "There is not people to show\n"
     end
   end
-
-  def select
-    case @input
-    when '1' then list_all_books
-    when '2' then list_users
-    when '3' then create_person
-    when '4' then insert_book
-    when '5' then insert_rental
-    when '7' then exit_app
-    else default
-    end
-  end
 end
