@@ -9,8 +9,8 @@ class Rental
     @date = date
     @book = book
     @person = person
-    person.rentals.push(self)
-    book.rentals.push(self)
+    person.add_rental(self)
+    book.add_rental(self)
   end
 
   def book=(book)
