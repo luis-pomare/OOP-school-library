@@ -5,7 +5,7 @@ require_relative './student'
 require_relative './teacher'
 require_relative './rental'
 require_relative './book'
-require_relative 'display.rb'
+require_relative 'display'
 
 # APP method to manage the entire codebase
 class App < Display
@@ -43,39 +43,6 @@ class App < Display
 
   def default
     puts "\nYou selected an invalid option\n"
-  end
-
-  def create_student
-    puts "\nPlease enter the students' name:"
-    name = gets.chop
-    puts "\nPlease enter the students' age:"
-    age = gets.chop
-    puts "\nDoes the student have parent permission?\n\n    1. For \"Yes\"
-    2. For \"No\""
-    permission = gets.chop == '1'
-    @students.push(Student.new(age, permission, name))
-  end
-
-  def create_teacher
-    puts "\nPlease enter the teacher's name:"
-    name = gets.chop
-    puts "\nPlease enter the teacher's age:"
-    age = gets.chop
-    puts "\nPlease enter the teacher's specialization:"
-    specialization = gets.chop
-    @teachers.push(Teacher.new(specialization, age, name))
-  end
-
-  def create_person
-    puts "\n Please select one of the following options:\n
-    1. For \"create a student\"
-    2. For \"create a teacher\"\n"
-    read_input
-    case @input
-    when '1' then create_student
-    when '2' then create_teacher
-    else default
-    end
   end
 
   def verify_rental
