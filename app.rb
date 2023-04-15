@@ -8,17 +8,30 @@ require_relative './book'
 
 # APP method to manage the entire codebase
 class App
+  attr_reader :books
+
   def initialize
     @running = 1
     @input = 0
+    @books = []
+    @students = []
+    @teachers = []
   end
 
-  def case7
+  def exit
     puts "\nAll the objects you created will be deleted:"
     puts 'Are you sure you want to close the app? Y/N'
     @input = gets.chop
     @running = 0 if @input.capitalize == 'Y' || @input.upcase == 'YES'
     puts "\n"
+  end
+
+  def insert_book
+    puts "\n Plese insert the title of the book"
+    title = gets.chop
+    puts "\n Plese insert the author of the book"
+    author = gets.chop
+    @books.push(Book.new(title, author))
   end
 
   def default
@@ -27,7 +40,8 @@ class App
 
   def select
     case @input
-    when '7' then case7
+    when '4' then insert_book
+    when '7' then exit
     else default
     end
   end
