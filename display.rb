@@ -62,8 +62,20 @@ class Display
     7. For \"exit'\n"
   end
 
+  def list_all_books
+    puts "\n"
+    if @books.empty? == false
+      @books.each_with_index do |book, index|
+        puts "#{index+1}. #{book.title} by #{book.author}"
+      end
+    else puts "Empty library"
+    end
+    puts "\n"
+  end
+
   def select
     case @input
+    when '1' then list_all_books
     when '3' then create_person
     when '4' then insert_book
     when '5' then insert_rental
