@@ -18,10 +18,14 @@ class App
     @teachers = []
   end
 
+  def read_input
+    @input = gets.chop
+  end
+
   def exit_app
     puts "\nAll the objects you created will be deleted:"
     puts 'Are you sure you want to close the app? Y/N'
-    @input = gets.chop
+    read_input
     @running = 0 if @input.capitalize == 'Y' || @input.upcase == 'YES'
     puts "\n"
   end
@@ -38,8 +42,35 @@ class App
     puts "\nYou selected an invalid option\n"
   end
 
+  def create_student
+    puts "\nPlease enter the students' name:"
+    name = gets.chop
+    puts "\nPlease enter the students' age:"
+    age = gets.chop
+    puts "\nDoes the student have parent permission?\n\n    1. For \"Yes\"
+    2. For \"No\""
+    if gets.chop == '1'
+      permission = true 
+    else permission = false 
+    end
+    @students.push(Student.new(age, permission, name))
+  end
+
+  def create_person
+    puts "\n Please select one of the following options:\n
+    1. For \"create a student\"
+    2. For \"create a teacher\"\n"
+    read_input
+    case @input
+    when '1' then create_student
+    when '2' then create_teacher
+    else default
+    end
+  end
+
   def select
     case @input
+    when '3' then create_person
     when '4' then insert_book
     when '7' then exit_app
     else default
@@ -60,7 +91,7 @@ class App
   def run
     while @running == 1
       show_options
-      @input = gets.chop
+      read_input
       select
     end
   end
