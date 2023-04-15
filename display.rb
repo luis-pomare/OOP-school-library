@@ -74,9 +74,33 @@ class Display
     puts "\n"
   end
 
+  def list_students
+    @students.each_with_index do |student, index|
+      puts "#{index + 1}. #{student.name} Age: #{student.age}"
+    end
+  end
+
+  def list_teachers
+    @teachers.each_with_index do |teacher, index|
+      puts "#{index + 1}. #{teacher.name} Age: #{teacher.age}"
+    end
+  end
+
+  def list_users
+    if @students.empty? == false || @teachers.empty? == false
+      puts 'Students:'
+      list_students
+      puts 'Teachers:'
+      list_teachers
+    else
+      puts "There is not people to show\n"
+    end
+  end
+
   def select
     case @input
     when '1' then list_all_books
+    when '2' then list_users
     when '3' then create_person
     when '4' then insert_book
     when '5' then insert_rental
