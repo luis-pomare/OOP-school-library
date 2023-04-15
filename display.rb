@@ -1,7 +1,12 @@
 # frozen_string_literal: true
+require_relative "list_by_id"
 
 # Manage all strings
-class Display
+class Display < List_by_id
+  def initialize
+    super()
+  end
+  
   def exit_app
     puts "\nAll the objects you created will be deleted:"
     puts 'Are you sure you want to close the app? Y/N'

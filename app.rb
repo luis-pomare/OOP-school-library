@@ -89,6 +89,7 @@ class App < Display
     when '3' then create_person
     when '4' then insert_book
     when '5' then insert_rental
+    when '6' then list_rentals
     when '7' then exit_app
     else default
     end
