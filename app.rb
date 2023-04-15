@@ -25,10 +25,6 @@ class App < Display
     @input = gets.chop
   end
 
-  def default
-    puts "\nYou selected an invalid option\n"
-  end
-
   def verify_rental
     if @teachers.empty? && @students.empty?
       puts "\nYou can't add rentals without people subscribed to the library"
@@ -89,9 +85,8 @@ class App < Display
     when '3' then create_person
     when '4' then insert_book
     when '5' then insert_rental
-    when '6' then list_rentals
+    when '6' then verify_rentals_ids
     when '7' then exit_app
-    else default
     end
   end
 

@@ -1,12 +1,9 @@
 # frozen_string_literal: true
-require_relative "list_by_id"
+
+require_relative 'list_by_id'
 
 # Manage all strings
-class Display < List_by_id
-  def initialize
-    super()
-  end
-  
+class Display < ListById
   def exit_app
     puts "\nAll the objects you created will be deleted:"
     puts 'Are you sure you want to close the app? Y/N'
@@ -52,7 +49,7 @@ class Display < List_by_id
     case @input
     when '1' then create_student
     when '2' then create_teacher
-    else default
+    else "\nYou din't sected a valid option\n"
     end
   end
 
