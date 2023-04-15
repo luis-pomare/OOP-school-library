@@ -25,22 +25,6 @@ class App < Display
     @input = gets.chop
   end
 
-  def exit_app
-    puts "\nAll the objects you created will be deleted:"
-    puts 'Are you sure you want to close the app? Y/N'
-    read_input
-    @running = 0 if @input.capitalize == 'Y' || @input.upcase == 'YES'
-    puts "\n"
-  end
-
-  def insert_book
-    puts "\n Plese insert the title of the book"
-    title = gets.chop
-    puts "\n Plese insert the author of the book"
-    author = gets.chop
-    @books.push(Book.new(title, author))
-  end
-
   def default
     puts "\nYou selected an invalid option\n"
   end
