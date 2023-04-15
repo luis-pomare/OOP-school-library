@@ -5,9 +5,10 @@ require_relative './student'
 require_relative './teacher'
 require_relative './rental'
 require_relative './book'
+require_relative 'display.rb'
 
 # APP method to manage the entire codebase
-class App
+class App < Display
   attr_reader :books
 
   def initialize
@@ -17,6 +18,7 @@ class App
     @students = []
     @teachers = []
     @rentals = []
+    super()
   end
 
   def read_input
@@ -137,17 +139,6 @@ class App
     when '7' then exit_app
     else default
     end
-  end
-
-  def show_options
-    puts "Please select one of the following options:\n
-    1. For \"list all books\"
-    2. For \"list all students and teachers\"
-    3. For \"create a new library user\"
-    4. For \"insert a new book\"
-    5. For \"new rental\"
-    6. For \"list all rentals from a given persons' ID\"
-    7. For \"exit'\n"
   end
 
   def run
