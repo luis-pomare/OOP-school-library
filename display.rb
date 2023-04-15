@@ -12,5 +12,16 @@ class Display
     5. For \"new rental\"
     6. For \"list all rentals from a given persons' ID\"
     7. For \"exit'\n"
-  end  
+  end
+
+  def select
+    case @input
+    when '3' then create_person
+    when '4' then insert_book
+    when '5' then insert_rental
+    when '7' then exit_app
+    else default
+    end
+  end
+
 end
