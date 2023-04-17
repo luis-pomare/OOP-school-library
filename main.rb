@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require_relative './app'
+require_relative './selection'
 
 def main
   puts "Welcome to the OOP school library\n\n"
-  app = App.new
-  app.run
+  selection = Selection.new
+  selection.run
 end
 
 main
