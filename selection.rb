@@ -1,11 +1,8 @@
-require_relative "./app"
+# frozen_string_literal: true
 
+require_relative './app'
+# Display the menu for the user
 class Selection < App
-
-  def initialize
-    super()
-  end
-
   def select1
     case @input
     when '4' then insert_book
