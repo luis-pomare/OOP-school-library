@@ -1,6 +1,6 @@
 require 'json'
 module Database
-  
+  # Save data
   def preserve_data
     preserve_books
     preserve_people
@@ -36,4 +36,13 @@ module Database
     File.write('rentals.json', rental_objects.to_json)
   end
 
+  #load data
+  def load_books
+    books = []
+    if File.exist?("books.json") && !File.empty?("books.json")
+      data = JSON.parse(File.read("books.json"))
+      data.each {|book| books << Book.new(book['title'], book['author'])}
+    end
+    books
+  end
 end

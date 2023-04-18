@@ -6,15 +6,18 @@ require_relative './teacher'
 require_relative './rental'
 require_relative './book'
 require_relative 'display'
+require_relative 'database'
 
 # APP method to manage the entire codebase
 class App < Display
   attr_reader :books
 
+  include Database
+  
   def initialize
     @running = 1
     @input = 0
-    @books = []
+    @books = load_books
     @students = []
     @teachers = []
     @rentals = []
