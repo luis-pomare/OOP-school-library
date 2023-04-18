@@ -80,4 +80,19 @@ module Database
     end
     students
   end
+
+  def load_teachers
+    teachers=[]
+    if File.exist?("people.json") && !File.empty?("people.json")
+      data = JSON.parse(File.read("people.json"))
+      data.each do |people|
+        if people['type'] == "Teacher"
+          person = Teacher.new(people['specialization'], people['age'], people['name'])
+          person.id =people['id']
+          teachers << person
+        end
+      end
+    end
+    teachers
+  end
 end

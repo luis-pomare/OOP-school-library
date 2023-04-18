@@ -19,7 +19,7 @@ class App < Display
     @input = 0
     @books = load_books
     @students = load_students
-    @teachers = []
+    @teachers = load_teachers
     @rentals = load_rentals
     super()
   end
