@@ -27,9 +27,9 @@ module Database
     File.write('people.json', people_objects.to_json)
   end
 
-  def preseve_rentals
+  def preserve_rentals
     rental_ojects = []
-    @rentals_list.each do |rental|
+    @rentals.each do |rental|
       book = { title: rental.book.title, author: rental.book.author }
       person = if rental.person.instance_of?(::Student)
                  { age: rental.person.age, classroom: rental.person.classroom, name: rental.person.name,
@@ -38,7 +38,7 @@ module Database
                  { age: rental.person.age, specialization: rental.person.specialization, name: rental.person.name,
                    id: rental.person.id, type: 'Teacher' }
                end
-      rental_ojects << { date: rental.date, book: book, person: person }
+      rental_ojects << { date: rental.date, book:, person: }
     end
     File.write('rentals.json', rental_ojects.to_json)
   end
