@@ -6,7 +6,7 @@ require_relative 'database'
 class Display < ListById
   include Database
   def exit_app
-    puts "\nAll the objects you created will be deleted:"
+    puts "\nAll the objects you created will be preserved:"
     puts 'Are you sure you want to close the app? Y/N'
     read_input
    

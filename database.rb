@@ -65,4 +65,19 @@ module Database
     end
     rentals
   end
+
+  def load_students
+    students=[]
+    if File.exist?("people.json") && !File.empty?("people.json")
+      data = JSON.parse(File.read("people.json"))
+      data.each do |people|
+        if people['type'] == "Student"
+          person = Student.new(people['age'], people['parent_permission'], people['name'])
+          person.id =people['id']
+          students << person
+        end
+      end
+    end
+    students
+  end
 end
