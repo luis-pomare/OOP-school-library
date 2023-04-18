@@ -1,14 +1,19 @@
 # frozen_string_literal: true
 
 require_relative 'list_by_id'
-
+require_relative 'database'
 # Manage all strings
 class Display < ListById
+  include Database
   def exit_app
     puts "\nAll the objects you created will be deleted:"
     puts 'Are you sure you want to close the app? Y/N'
     read_input
-    @running = 0 if @input.capitalize == 'Y' || @input.upcase == 'YES'
+   
+    if @input.capitalize == 'Y' || @input.upcase == 'YES'
+      @running = 0 
+      preserve_books
+    end
     puts "\n"
   end
 
