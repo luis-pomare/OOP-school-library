@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative './classroom'
 require_relative './student'
 require_relative './teacher'
@@ -13,7 +11,7 @@ class App < Display
   attr_reader :books
 
   include Database
-  
+
   def initialize
     @running = 1
     @input = 0

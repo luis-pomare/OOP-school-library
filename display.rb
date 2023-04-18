@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'list_by_id'
 require_relative 'database'
 # Manage all strings
@@ -9,9 +7,9 @@ class Display < ListById
     puts "\nAll the objects you created will be preserved:"
     puts 'Are you sure you want to close the app? Y/N'
     read_input
-   
+
     if @input.capitalize == 'Y' || @input.upcase == 'YES'
-      @running = 0 
+      @running = 0
       preserve_data
     end
     puts "\n"
@@ -67,6 +65,7 @@ class Display < ListById
     5. For \"new rental\"
     6. For \"list all rentals from a given persons' ID\"
     7. For \"exit'\n"
+    puts "\n\n"
   end
 
   def list_all_books

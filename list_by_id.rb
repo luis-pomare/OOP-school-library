@@ -1,16 +1,12 @@
-# frozen_string_literal: true
-
 # List by Id
 class ListById
-  def show_selected_rentals(people)
+  def show_selected_rentals
     person_id = gets.chop
-    people.each do |person|
-      next unless person.id == person_id.to_i
-
-      person.rentals.each do |curren|
-        puts "#{curren.date} #{curren.person.name} #{curren.book.title}"
-      end
+    puts "\nRentals\n"
+    @rentals.each do |rental|
+      puts "#{rental.date} #{rental.person.name} #{rental.book.title}" if person_id.to_i == rental.person.id
     end
+    puts "\n\n"
   end
 
   def verify_rentals_ids
@@ -21,7 +17,7 @@ class ListById
       people.each do |person|
         puts "ID: #{person.id} Name: #{person.name} Age: #{person.age}"
       end
-      show_selected_rentals(people)
+      show_selected_rentals
     end
   end
 end
