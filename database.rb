@@ -38,7 +38,7 @@ module Database
                  { age: rental.person.age, specialization: rental.person.specialization, name: rental.person.name,
                    id: rental.person.id, type: 'Teacher' }
                end
-      rental_ojects << { date: rental.date, book:, person: }
+      rental_ojects << { date: rental.date, book, person }
     end
     File.write('rentals.json', rental_ojects.to_json)
   end
