@@ -12,7 +12,7 @@ class Display < ListById
    
     if @input.capitalize == 'Y' || @input.upcase == 'YES'
       @running = 0 
-      preserve_books
+      preserve_data
     end
     puts "\n"
   end
