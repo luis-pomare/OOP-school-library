@@ -45,4 +45,24 @@ module Database
     end
     books
   end
+
+  def load_rentals
+    rentals=[]
+    if File.exist?("rentals.json") && !File.empty?("rentals.json")
+      data = JSON.parse(File.read("rentals.json"))
+      data.each do |rental|
+        book = Book.new(rental['book']['title'], rental['book']['author'])
+        person = nil
+        if rental['person']['type'] == "Student"
+          person = Student.new(rental['person']['age'], rental['person']['parent_permission'], rental['person']['name'])
+          person.id =rental['person']['id']
+        else
+          person = Teacher.new(rental['person']['specialization'], rental['person']['age'], rental['person']['name'])
+          person.id =rental['person']['id']
+        end
+        rentals << Rental.new(rental['date'],book,person)
+      end
+    end
+    rentals
+  end
 end
