@@ -1,23 +1,24 @@
-# frozen_string_literal: true
-
 require_relative './classroom'
 require_relative './student'
 require_relative './teacher'
 require_relative './rental'
 require_relative './book'
 require_relative 'display'
+require_relative 'database'
 
 # APP method to manage the entire codebase
 class App < Display
   attr_reader :books
 
+  include Database
+
   def initialize
     @running = 1
     @input = 0
-    @books = []
-    @students = []
-    @teachers = []
-    @rentals = []
+    @books = load_books
+    @students = load_students
+    @teachers = load_teachers
+    @rentals = load_rentals
     super()
   end
 

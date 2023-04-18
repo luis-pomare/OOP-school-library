@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Inherits from
 class Nameable
   def correct_name
