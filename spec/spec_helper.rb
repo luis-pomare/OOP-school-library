@@ -1,0 +1,8 @@
+require_relative '../object_generators/book'
+require_relative '../object_generators/person'
+require_relative '../object_generators/student'
+require_relative '../object_generators/teacher'
+require_relative '../object_generators/classroom'
+require_relative '../object_generators/rental'
+require_relative '../functions/capitalize'
+require_relative '../functions/trim'

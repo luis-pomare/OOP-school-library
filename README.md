@@ -59,6 +59,20 @@ To run the project, execute the following command:
   ruby main.rb
 ```
 
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec
+```
+
+To run the linter
+
+```sh
+  rubocop
+```
+
 ### Prerequisites
 
 In order to run this project you need to install Ruby.
@@ -68,13 +82,19 @@ In order to run this project you need to install Ruby.
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 Luis Pomare
+👤 **Luis Pomare**
 
 - GitHub: [@Luis Pomare](https://github.com/luis-pomare)
 
 - LinkedIn: [@Luis Pomare](https://www.linkedin.com/in/luis-pomare-388116225/)
 
 - Twitter: [@LuisPomare1](https://twitter.com/LuisPomare1)
+
+👤 **Kender Romain**
+
+- GitHub: [@Kensteph](https://github.com/kensteph)
+- Twitter: [@RomainKender](https://twitter.com/RomainKender)
+- LinkedIn: [kender-romain8788](https://www.linkedin.com/in/kender-romain8788/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
