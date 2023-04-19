@@ -1,11 +1,10 @@
-require_relative './spec_helper.rb'
+require_relative './spec_helper'
 
 describe Teacher do
-  
   before :each do
-    @teacher = Teacher.new 'Programming', 47, 'Daniel Klien' 
+    @teacher = Teacher.new 'Programming', 47, 'Daniel Klien'
   end
- 
+
   describe '#new' do
     it 'Should return a Teacher object' do
       expect(@teacher).to be_an_instance_of Teacher
@@ -14,7 +13,7 @@ describe Teacher do
 
   describe '#specialization' do
     it 'Should return the correct specialization' do
-      readed_specialization =  @teacher.specialization
+      readed_specialization = @teacher.specialization
 
       expect(readed_specialization).to eql 'Programming'
     end
@@ -22,7 +21,7 @@ describe Teacher do
 
   describe '#age' do
     it 'Should return the correct age' do
-      age =  @teacher.age
+      age = @teacher.age
 
       expect(age).to eql 47
     end
@@ -30,7 +29,7 @@ describe Teacher do
 
   describe '#name' do
     it 'Should return the correct name' do
-      readed_name =  @teacher.name
+      readed_name = @teacher.name
 
       expect(readed_name).to eql 'Daniel Klien'
     end

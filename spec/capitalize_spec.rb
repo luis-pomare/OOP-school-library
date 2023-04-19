@@ -1,12 +1,12 @@
-require_relative './spec_helper.rb'
+require_relative './spec_helper'
 
 describe CapitalizeDecorator do
-  describe "#correct_name" do
+  describe '#correct_name' do
     it 'Should capitalized the person name' do
       person = Person.new 22, 'viniciusjunior'
-      capitalizedPerson = CapitalizeDecorator.new person
+      capitalized_person = CapitalizeDecorator.new person
 
-      capitalize = capitalizedPerson.correct_name
+      capitalize = capitalized_person.correct_name
 
       expect(capitalize).to eql 'Viniciusjunior'
     end

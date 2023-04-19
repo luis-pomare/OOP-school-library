@@ -1,11 +1,10 @@
-require_relative './spec_helper.rb'
+require_relative './spec_helper'
 
 describe Student do
-  
   before :each do
     @student = Student.new 17, true, 'Daniel Klien'
   end
- 
+
   describe '#new' do
     it 'Should return a Student object' do
       expect(@student).to be_an_instance_of Student
@@ -13,19 +12,18 @@ describe Student do
   end
 
   describe '#classroom' do
-  
-  it 'Should return the student classroom' do
-    classroom = Classroom.new("Class A")
-    @student.classroom = classroom
-    readed_classroom = @student.classroom
-    
-      expect(readed_classroom).to eql classroom 
+    it 'Should return the student classroom' do
+      classroom = Classroom.new('Class A')
+      @student.classroom = classroom
+      readed_classroom = @student.classroom
+
+      expect(readed_classroom).to eql classroom
     end
   end
 
   describe '#name' do
     it 'Should return the correct name' do
-      name =  @student.name
+      name = @student.name
 
       expect(name).to eql 'Daniel Klien'
     end
@@ -33,7 +31,7 @@ describe Student do
 
   describe '#age' do
     it 'Should return the correct age' do
-      age =  @student.age
+      age = @student.age
 
       expect(age).to eql 17
     end
