@@ -11,7 +11,7 @@ module Database
   def preserve_books
     book_objects = []
     @books.each { |book| book_objects << { title: book.title, author: book.author } }
-    File.write('books.json', book_objects.to_json)
+    File.write('./json/books.json', book_objects.to_json)
   end
 
   def preserve_people
@@ -24,7 +24,7 @@ module Database
       people_objects << { age: teacher.age, specialization: teacher.specialization, name: teacher.name, id: teacher.id,
                           type: 'Teacher' }
     end
-    File.write('people.json', people_objects.to_json)
+    File.write('./json/people.json', people_objects.to_json)
   end
 
   def preserve_rentals
@@ -41,14 +41,14 @@ module Database
                       end
       rental_ojects << { date: rental.date, book: rental_book, person: rental_person }
     end
-    File.write('rentals.json', rental_ojects.to_json)
+    File.write('./json/rentals.json', rental_ojects.to_json)
   end
 
   # load data
   def load_books
     books = []
-    if File.exist?('books.json') && !File.empty?('books.json')
-      data = JSON.parse(File.read('books.json'))
+    if File.exist?('./json/books.json') && !File.empty?('./json/books.json')
+      data = JSON.parse(File.read('./json/books.json'))
       data.each { |book| books << Book.new(book['title'], book['author']) }
     end
     books
@@ -56,8 +56,8 @@ module Database
 
   def load_rentals
     rentals = []
-    if File.exist?('rentals.json') && !File.empty?('rentals.json')
-      data = JSON.parse(File.read('rentals.json'))
+    if File.exist?('./json/rentals.json') && !File.empty?('./json/rentals.json')
+      data = JSON.parse(File.read('./json/rentals.json'))
       data.each do |rental|
         book = Book.new(rental['book']['title'], rental['book']['author'])
         person = if rental['person']['type'] == 'Student'
@@ -74,8 +74,8 @@ module Database
 
   def load_students
     students = []
-    if File.exist?('people.json') && !File.empty?('people.json')
-      data = JSON.parse(File.read('people.json'))
+    if File.exist?('./json/people.json') && !File.empty?('./json/people.json')
+      data = JSON.parse(File.read('./json/people.json'))
       data.each do |people|
         next unless people['type'] == 'Student'
 
@@ -89,8 +89,8 @@ module Database
 
   def load_teachers
     teachers = []
-    if File.exist?('people.json') && !File.empty?('people.json')
-      data = JSON.parse(File.read('people.json'))
+    if File.exist?('./json/people.json') && !File.empty?('./json/people.json')
+      data = JSON.parse(File.read('./json/people.json'))
       data.each do |people|
         next unless people['type'] == 'Teacher'
 

@@ -1,4 +1,4 @@
-require_relative './nameable'
+require_relative '../object_generators/nameable'
 
 # Base decorator
 class Base < Nameable
