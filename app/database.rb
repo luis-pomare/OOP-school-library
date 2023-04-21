@@ -9,9 +9,7 @@ module Database
   end
 
   def preserve_books
-    book_objects = []
-    @books.each { |book| book_objects << { title: book.title, author: book.author } }
-    File.write('./json/books.json', book_objects.to_json)
+    File.write('./json/books.json', @books.to_json)
   end
 
   def preserve_people
